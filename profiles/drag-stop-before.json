@@ -1,0 +1,179 @@
+{
+  "source": "profiles/v020-source",
+  "before": [
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5e225a0",
+      "x": 4578,
+      "y": -868,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1843130
+    }
+  ],
+  "moving": [
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5e225a0",
+      "x": 4578,
+      "y": -868,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1843130
+    },
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd59d03a0",
+      "x": 4728,
+      "y": -838,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1843130
+    }
+  ],
+  "stopSamples": [
+    {
+      "afterSeconds": 0.0101,
+      "layers": [
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd5e225a0",
+          "x": 4578,
+          "y": -868,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        },
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd59d03a0",
+          "x": 4728,
+          "y": -838,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        }
+      ]
+    },
+    {
+      "afterSeconds": 0.0527,
+      "layers": [
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd5e225a0",
+          "x": 4578,
+          "y": -868,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        },
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd59d03a0",
+          "x": 4728,
+          "y": -838,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        }
+      ]
+    },
+    {
+      "afterSeconds": 0.135,
+      "layers": [
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd5e225a0",
+          "x": 4578,
+          "y": -868,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        },
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd59d03a0",
+          "x": 4728,
+          "y": -838,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        }
+      ]
+    },
+    {
+      "afterSeconds": 0.298,
+      "layers": [
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd5e225a0",
+          "x": 4578,
+          "y": -868,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        },
+        {
+          "monitor": "DP-1",
+          "address": "0x5b4dd59d03a0",
+          "x": 4728,
+          "y": -838,
+          "w": 444,
+          "h": 186,
+          "alpha": 1,
+          "namespace": "omarchy-desktop-clock",
+          "pid": 1843130
+        }
+      ]
+    }
+  ],
+  "released": [
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5e225a0",
+      "x": 4728,
+      "y": -838,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1843130
+    }
+  ],
+  "settled": [
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5e225a0",
+      "x": 4728,
+      "y": -838,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1843130
+    }
+  ],
+  "visibleWindowStable": false,
+  "stoppedGeometryStable": true,
+  "releasePositionStable": true
+}

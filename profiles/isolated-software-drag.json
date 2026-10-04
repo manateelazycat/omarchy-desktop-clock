@@ -1,0 +1,62 @@
+{
+  "durationMs": 5010,
+  "inputEvents": 2504,
+  "positionUpdates": 157,
+  "ticks": 313,
+  "tickMedianMs": 16,
+  "tickP95Ms": 17,
+  "tickMaxMs": 18,
+  "writes": 1,
+  "trace": {
+    "inputRegionUpdates": 4,
+    "surfaceCommits": 636,
+    "damageSubmissions": 0,
+    "damagedPixels": 0,
+    "nativeSurfaces": [
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      }
+    ]
+  },
+  "cpuPercentOneCore": 1.44,
+  "rssPeakMiB": 189.11,
+  "log": "profiles/isolated-software-drag.log",
+  "source": "/home/andy/omarchy-desktop-clock"
+}

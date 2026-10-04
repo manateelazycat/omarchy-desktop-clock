@@ -1,0 +1,42 @@
+{
+  "durationMs": 3012,
+  "inputEvents": 1504,
+  "positionUpdates": 849,
+  "ticks": 188,
+  "tickMedianMs": 16,
+  "tickP95Ms": 17,
+  "tickMaxMs": 19,
+  "writes": 1,
+  "trace": {
+    "inputRegionUpdates": 728,
+    "surfaceCommits": 728,
+    "damageSubmissions": 728,
+    "damagedPixels": 1509580800,
+    "nativeSurfaces": [
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "cpuPercentOneCore": 12.95,
+  "rssPeakMiB": 258.3,
+  "log": "profiles/before-trace.log",
+  "source": "/tmp/desktop-clock-baseline-n_vixuh7"
+}

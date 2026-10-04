@@ -1,0 +1,66 @@
+{
+  "durationMs": 5011,
+  "frames": 150,
+  "fps": 29.934144881261226,
+  "waveFrameGaps": {
+    "count": 150,
+    "medianMs": 32,
+    "p95Ms": 48,
+    "maxMs": 49
+  },
+  "renders": {
+    "HDMI-A-1": {
+      "fps": 60.067850728397524,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 29,
+        "maxMs": 33
+      }
+    },
+    "DP-1": {
+      "fps": 60.067850728397524,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 26,
+        "maxMs": 33
+      }
+    },
+    "HDMI-A-2": {
+      "fps": 59.86828976252245,
+      "gaps": {
+        "count": 299,
+        "medianMs": 17,
+        "p95Ms": 27,
+        "maxMs": 33
+      }
+    },
+    "DP-2": {
+      "fps": 60.067850728397524,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 22,
+        "maxMs": 27
+      }
+    }
+  },
+  "inputEvents": 0,
+  "writes": 0,
+  "waveProcessCpuPercentOneCore": 48.61,
+  "mode": "separate",
+  "drag": false,
+  "clockSource": ".",
+  "log": "profiles/wave-isolated-idle-2.log",
+  "waveSourceSha256": {
+    "Service.qml": "4ed0df9bbced386a961c7e410170e3b53374eed9f909b4ae3b121762442c3fed",
+    "WaveSurface.qml": "952f1fb1dd3b32541c1735cfee77874c6ddee609eaa6dcf47f314ef26db6c489"
+  },
+  "clock": {
+    "inputEvents": 0,
+    "positionUpdates": 0,
+    "writes": 0
+  },
+  "clockProcessCpuPercentOneCore": 0.2
+}

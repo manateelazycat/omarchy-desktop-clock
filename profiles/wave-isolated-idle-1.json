@@ -1,0 +1,57 @@
+{
+  "durationMs": 5010,
+  "frames": 150,
+  "fps": 29.940119760479043,
+  "waveFrameGaps": {
+    "count": 150,
+    "medianMs": 32,
+    "p95Ms": 48,
+    "maxMs": 49
+  },
+  "renders": {
+    "DP-1": {
+      "fps": 60.079840319361274,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 28,
+        "maxMs": 33
+      }
+    },
+    "HDMI-A-1": {
+      "fps": 60.079840319361274,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 28,
+        "maxMs": 31
+      }
+    },
+    "HDMI-A-2": {
+      "fps": 60.079840319361274,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 24,
+        "maxMs": 28
+      }
+    },
+    "DP-2": {
+      "fps": 59.880239520958085,
+      "gaps": {
+        "count": 299,
+        "medianMs": 17,
+        "p95Ms": 18,
+        "maxMs": 21
+      }
+    }
+  },
+  "inputEvents": 0,
+  "writes": 0,
+  "waveProcessCpuPercentOneCore": 40.85,
+  "mode": "separate",
+  "drag": false,
+  "clockSource": ".",
+  "log": "profiles/wave-isolated-idle-1.log",
+  "clockProcessCpuPercentOneCore": 0.2
+}

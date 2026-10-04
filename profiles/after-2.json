@@ -1,0 +1,14 @@
+{
+  "durationMs": 5013,
+  "inputEvents": 2504,
+  "positionUpdates": 313,
+  "ticks": 313,
+  "tickMedianMs": 16,
+  "tickP95Ms": 17,
+  "tickMaxMs": 20,
+  "writes": 1,
+  "cpuPercentOneCore": 11.95,
+  "rssPeakMiB": 287.43,
+  "log": "profiles/after-2.log",
+  "source": "/home/andy/omarchy-desktop-clock"
+}

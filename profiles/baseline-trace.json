@@ -1,0 +1,13 @@
+{
+  "durationMs": 3011,
+  "inputEvents": 1504,
+  "ticks": 188,
+  "tickMedianMs": 16,
+  "tickP95Ms": 17,
+  "tickMaxMs": 18,
+  "writes": 1,
+  "cpuPercentOneCore": 14.04,
+  "rssPeakMiB": 258.21,
+  "log": "profiles/baseline-trace.log",
+  "source": "/home/andy/omarchy-desktop-clock"
+}

@@ -1,0 +1,56 @@
+{
+  "durationMs": 5008,
+  "frames": 150,
+  "fps": 29.952076677316295,
+  "waveFrameGaps": {
+    "count": 150,
+    "medianMs": 32,
+    "p95Ms": 48,
+    "maxMs": 49
+  },
+  "renders": {
+    "HDMI-A-1": {
+      "fps": 60.1038338658147,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 29,
+        "maxMs": 42
+      }
+    },
+    "HDMI-A-2": {
+      "fps": 60.1038338658147,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 25,
+        "maxMs": 36
+      }
+    },
+    "DP-2": {
+      "fps": 59.90415335463259,
+      "gaps": {
+        "count": 299,
+        "medianMs": 17,
+        "p95Ms": 24,
+        "maxMs": 35
+      }
+    },
+    "DP-1": {
+      "fps": 60.1038338658147,
+      "gaps": {
+        "count": 300,
+        "medianMs": 17,
+        "p95Ms": 26,
+        "maxMs": 34
+      }
+    }
+  },
+  "inputEvents": 0,
+  "writes": 0,
+  "waveProcessCpuPercentOneCore": 40.86,
+  "mode": "alone",
+  "drag": false,
+  "clockSource": "/home/andy/omarchy-desktop-clock/profiles/shared-v011-source",
+  "log": "profiles/wave-alone-1.log"
+}

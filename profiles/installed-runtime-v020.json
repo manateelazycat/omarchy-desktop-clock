@@ -1,0 +1,88 @@
+{
+  "status": {
+    "positionX": 0.5342672225140056,
+    "positionY": 0.391192929964539,
+    "dragging": false,
+    "clockRunning": true,
+    "emptyScreens": {
+      "HDMI-A-1": false,
+      "DP-1": true,
+      "HDMI-A-2": false,
+      "DP-2": false
+    },
+    "palette": {
+      "foreground": "#a9b1d6",
+      "background": "#1a1b26",
+      "accent": "#7aa2f7",
+      "fontFamily": "monospace"
+    },
+    "screens": [
+      {
+        "name": "HDMI-A-1",
+        "visible": false,
+        "x": 787,
+        "y": 355
+      },
+      {
+        "name": "DP-1",
+        "visible": true,
+        "x": 787,
+        "y": 355
+      },
+      {
+        "name": "HDMI-A-2",
+        "visible": false,
+        "x": 787,
+        "y": 355
+      },
+      {
+        "name": "DP-2",
+        "visible": false,
+        "x": 787,
+        "y": 355
+      }
+    ],
+    "version": "0.2.0",
+    "renderer": "isolated-software",
+    "workerPid": 1789362,
+    "connected": true,
+    "accent": "#7aa2f7",
+    "foreground": "#a9b1d6",
+    "background": "#1a1b26"
+  },
+  "layers": [
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5b57df0",
+      "x": 4627,
+      "y": -977,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1789362
+    }
+  ],
+  "durationSeconds": 10.000192463005078,
+  "clockCpuPercentOneCore": 0.1,
+  "omarchyCpuPercentOneCore": 10.2,
+  "memory": "5e09e8bcd000-7fff4054a000 ---p 00000000 00:00 0                          [rollup]\nRss:              190352 kB\nPss:              110561 kB\nPss_Dirty:         89085 kB\nPss_Anon:          88664 kB\nPss_File:          21476 kB\nPss_Shmem:           421 kB\nShared_Clean:     101060 kB\nShared_Dirty:        332 kB\nPrivate_Clean:        40 kB\nPrivate_Dirty:     88920 kB\nReferenced:       190352 kB\nAnonymous:         88664 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     71680 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+  "wave": {
+    "active": true,
+    "level": 0.9915980272009196,
+    "screens": {
+      "HDMI-A-1": false,
+      "DP-1": true,
+      "HDMI-A-2": false,
+      "DP-2": false
+    },
+    "sinks": [
+      "alsa_output.usb-Jieli_Technology_USB_Composite_Device_4250315A3438320B-00.analog-stereo"
+    ],
+    "color": "#7aa2f7",
+    "height": 56,
+    "opacity": 0.76,
+    "sensitivity": 1,
+    "error": ""
+  }
+}

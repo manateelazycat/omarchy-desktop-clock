@@ -1,0 +1,106 @@
+{
+  "clock": {
+    "positionX": 0.5286403623949579,
+    "positionY": 0.5326398123522459,
+    "dragging": false,
+    "clockRunning": true,
+    "emptyScreens": {
+      "HDMI-A-1": false,
+      "DP-1": true,
+      "HDMI-A-2": false,
+      "DP-2": false
+    },
+    "palette": {
+      "foreground": "#a9b1d6",
+      "background": "#1a1b26",
+      "accent": "#7aa2f7",
+      "fontFamily": "monospace"
+    },
+    "screens": [
+      {
+        "name": "HDMI-A-1",
+        "visible": false,
+        "x": 779,
+        "y": 475
+      },
+      {
+        "name": "DP-1",
+        "visible": true,
+        "x": 779,
+        "y": 475
+      },
+      {
+        "name": "HDMI-A-2",
+        "visible": false,
+        "x": 779,
+        "y": 475
+      },
+      {
+        "name": "DP-2",
+        "visible": false,
+        "x": 779,
+        "y": 475
+      }
+    ],
+    "version": "0.2.1",
+    "renderer": "isolated-software",
+    "workerPid": 1859065,
+    "connected": true,
+    "accent": "#7aa2f7",
+    "foreground": "#a9b1d6",
+    "background": "#1a1b26"
+  },
+  "wave": {
+    "active": true,
+    "level": 0.8277571793622791,
+    "screens": {
+      "HDMI-A-1": false,
+      "DP-1": true,
+      "HDMI-A-2": false,
+      "DP-2": false
+    },
+    "sinks": [
+      "alsa_output.usb-Jieli_Technology_USB_Composite_Device_4250315A3438320B-00.analog-stereo"
+    ],
+    "color": "#7aa2f7",
+    "height": 56,
+    "opacity": 0.76,
+    "sensitivity": 1,
+    "error": ""
+  },
+  "settings": {
+    "id": "io.github.manateelazycat.desktop-clock",
+    "positionX": 0.5286403623949579,
+    "positionY": 0.5326398123522459
+  },
+  "layers": [
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5d9f8b0",
+      "x": 4619,
+      "y": -857,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock",
+      "pid": 1859065
+    },
+    {
+      "monitor": "DP-1",
+      "address": "0x5b4dd5a534b0",
+      "x": 4619,
+      "y": -857,
+      "w": 444,
+      "h": 186,
+      "alpha": 1,
+      "namespace": "omarchy-desktop-clock-input",
+      "pid": 1859065
+    }
+  ],
+  "configErrors": "",
+  "globalAnimations": {
+    "option": "animations.enabled",
+    "bool": true,
+    "set": true
+  }
+}

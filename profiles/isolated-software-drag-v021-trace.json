@@ -1,0 +1,63 @@
+{
+  "durationMs": 5011,
+  "inputEvents": 2504,
+  "positionUpdates": 313,
+  "ticks": 313,
+  "tickMedianMs": 16,
+  "tickP95Ms": 17,
+  "tickMaxMs": 17,
+  "writes": 1,
+  "trace": {
+    "inputRegionUpdates": 0,
+    "surfaceCommits": 1197,
+    "damageSubmissions": 0,
+    "damageBufferSubmissions": 0,
+    "damagedPixels": 0,
+    "nativeSurfaces": [
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock-input",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock-input",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock-input",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock",
+        "width": 444,
+        "height": 186
+      },
+      {
+        "namespace": "omarchy-desktop-clock-input",
+        "width": 444,
+        "height": 186
+      }
+    ]
+  },
+  "cpuPercentOneCore": 3.08,
+  "rssPeakMiB": 185.2,
+  "log": "profiles/isolated-software-drag-v021-trace.log",
+  "source": "/home/andy/omarchy-desktop-clock"
+}

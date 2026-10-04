@@ -1,0 +1,14 @@
+{
+  "durationMs": 5011,
+  "inputEvents": 2504,
+  "positionUpdates": 1412,
+  "ticks": 313,
+  "tickMedianMs": 16,
+  "tickP95Ms": 17,
+  "tickMaxMs": 18,
+  "writes": 1,
+  "cpuPercentOneCore": 13.35,
+  "rssPeakMiB": 262.15,
+  "log": "profiles/before-1.log",
+  "source": "/tmp/desktop-clock-baseline-n_vixuh7"
+}
