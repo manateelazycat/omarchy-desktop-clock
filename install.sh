@@ -21,7 +21,7 @@ if [[ -f $config_root/shell.json ]]; then
 fi
 if [[ $(realpath -m -- "$plugin_source") != $(realpath -m -- "$plugin_target") ]]; then
   mkdir -p -- "$plugin_target"
-  for file in manifest.json Service.qml hyprland.lua README.md PERFORMANCE.md LICENSE; do
+  for file in manifest.json Service.qml hyprland.lua README.md README.zh-CN.md PERFORMANCE.md LICENSE; do
     install -m 644 -- "$plugin_source/$file" "$plugin_target/$file"
   done
   install -d -- "$plugin_target/renderer"
