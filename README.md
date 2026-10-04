@@ -17,7 +17,7 @@ A terminal-style desktop clock for Omarchy, with theme colors and a shared dragg
 
 ## Install
 
-Requires Omarchy with Quickshell and Hyprland using Lua configuration.
+Requires Omarchy with Quickshell and Hyprland using Lua configuration. The installer also uses Bash, Python 3, jq and GNU coreutils, which are included in Omarchy.
 
 ```sh
 git clone https://github.com/manateelazycat/omarchy-desktop-clock.git
@@ -35,6 +35,23 @@ Update while keeping the current enable state:
 git pull
 bash install.sh --no-enable
 ```
+
+If installed through the marketplace or `omarchy plugin add`, run this additional setup once to add the clock's Hyprland animation rules:
+
+```sh
+bash "${XDG_CONFIG_HOME:-$HOME/.config}/omarchy/plugins/io.github.manateelazycat.desktop-clock/install.sh" --no-enable
+omarchy plugin enable io.github.manateelazycat.desktop-clock
+```
+
+## Uninstall
+
+```sh
+omarchy plugin remove io.github.manateelazycat.desktop-clock
+```
+
+This unloads the clock and removes its installed plugin directory after confirmation. Omarchy backs up directories installed without Git.
+The guarded include in `~/.config/hypr/hyprland.lua` does nothing once the plugin is removed. To remove it too, delete the block from `-- >>> omarchy-desktop-clock >>>` through `-- <<< omarchy-desktop-clock <<<`, then run `hyprctl reload`.
+Configuration backups remain in `~/.local/state/omarchy/desktop-clock/backups/` for recovery.
 
 ## Configuration
 

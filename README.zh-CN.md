@@ -17,7 +17,7 @@ Omarchy 终端风格桌面时钟，颜色跟随主题，多显示器共享拖拽
 
 ## 安装
 
-需要 Omarchy（Quickshell）环境，以及使用 Lua 配置的 Hyprland。
+需要 Omarchy（Quickshell）环境，以及使用 Lua 配置的 Hyprland。安装器还使用 Bash、Python 3、jq 和 GNU coreutils，Omarchy 已包含这些工具。
 
 ```sh
 git clone https://github.com/manateelazycat/omarchy-desktop-clock.git
@@ -35,6 +35,23 @@ bash install.sh
 git pull
 bash install.sh --no-enable
 ```
+
+如果通过插件商店或 `omarchy plugin add` 安装，需要额外执行一次以下设置，添加时钟专用的 Hyprland 动画规则：
+
+```sh
+bash "${XDG_CONFIG_HOME:-$HOME/.config}/omarchy/plugins/io.github.manateelazycat.desktop-clock/install.sh" --no-enable
+omarchy plugin enable io.github.manateelazycat.desktop-clock
+```
+
+## 卸载
+
+```sh
+omarchy plugin remove io.github.manateelazycat.desktop-clock
+```
+
+确认后，该命令会停止时钟并移除插件安装目录。对于未通过 Git 安装的目录，Omarchy 会先保留备份。
+插件移除后，`~/.config/hypr/hyprland.lua` 中的受保护加载代码不再执行任何操作。如需一并清理，删除从 `-- >>> omarchy-desktop-clock >>>` 到 `-- <<< omarchy-desktop-clock <<<` 的整个代码块，然后执行 `hyprctl reload`。
+配置备份保留在 `~/.local/state/omarchy/desktop-clock/backups/`，便于恢复。
 
 ## 配置
 
