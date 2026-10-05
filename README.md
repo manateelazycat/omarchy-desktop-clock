@@ -12,6 +12,8 @@ A terminal-style desktop clock for Omarchy, with theme colors and a shared dragg
 - Colors and fonts follow the Omarchy theme. Displays local time in 24-hour format, with seconds, date and localized short weekday names.
 - Drag with the left mouse button to position the clock. The saved relative position is shared across all monitors and workspaces.
 - Stops without easing when the pointer stops. Releasing the mouse keeps the same visible window and saves the position once.
+- The top-right minimize button folds the clock into a black tab at the top edge, with a theme-colored center line. Click the tab to restore the same position and scale; timekeeping continues while minimized. Each monitor saves its own minimized state, including across reloads and workspace changes.
+- The clock tab uses the left slot near the top center; Desktop Top uses the right slot, separated by 20 pixels. Both the clock and its tab follow the empty-workspace visibility rule.
 - Sits above the wallpaper without reserving screen space or taking keyboard focus. Side panels and Wave do not count as application windows.
 - Uses an independent software renderer to keep clock rendering separate from Omarchy and Wave. Clock timers stop when the current workspaces on all monitors are occupied.
 
@@ -89,7 +91,7 @@ omarchy-shell desktop-clock status
 ```
 
 Disabling the plugin stops its renderer and removes its inline configuration entry; installation backups retain the previous settings.
-`status` reports the version, renderer PID, saved position and visibility on each monitor.
+`status` reports the version, renderer PID, saved position, visibility and minimized state on each monitor.
 If an update still reports an old version, run `omarchy restart shell` to clear the host's QML cache.
 
 ## Development

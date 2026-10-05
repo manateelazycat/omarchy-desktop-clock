@@ -13,3 +13,4 @@ ln -s -- "$omarchy_root/shell/Commons" "$runtime_root/Commons"
 ln -s -- "$omarchy_root/shell/Ui" "$runtime_root/Ui"
 QT_QUICK_BACKEND=software QSG_RENDER_LOOP=basic timeout 20s quickshell -p "$runtime_root" --no-color 2>&1 | tee "$runtime_root/output.log"
 rg -q '^.*CLOCK_RUNTIME_TESTS_PASSED$' "$runtime_root/output.log"
+if rg -q 'CLOCK_RUNTIME_TESTS_FAILED|TypeError|ReferenceError|Binding loop|Unable to assign' "$runtime_root/output.log"; then exit 1; fi

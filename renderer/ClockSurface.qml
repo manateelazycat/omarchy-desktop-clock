@@ -23,6 +23,11 @@ PanelWindow {
     readonly property int inputY: controller.dragging
         ? Position.pixel(controller.dragOrigin.y, screenHeight, clockHeight, edgeMargin) : clockY
     readonly property var displayWindow: display
+    readonly property var minimizedWindow: tab
+    // Native remapping can re-announce the same screen; compare its stable
+    // name to avoid coupling minimized state to backing-window creation.
+    readonly property string screenName: screen ? screen.name : ""
+    readonly property bool minimized: controller.isMinimized(screenName)
 
     anchors { top: true; left: true }
     margins { top: panel.inputY; left: panel.inputX }
@@ -30,7 +35,7 @@ PanelWindow {
     implicitHeight: clockHeight
     color: "transparent"
     exclusionMode: ExclusionMode.Ignore
-    visible: !remapping
+    visible: !minimized && !remapping
     WlrLayershell.namespace: "omarchy-desktop-clock-input"
     WlrLayershell.layer: WlrLayer.Bottom
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.None
@@ -68,9 +73,20 @@ PanelWindow {
             timestamp: panel.timestamp
             palette: panel.controller.palette
             opacity: panel.controller.clockOpacity
+            minimizeHovered: minimize.containsMouse
             // Keep card appearance stable across pointer grabs and release.
             // Only the cursor indicates dragging; no hover alpha transitions.
         }
+    }
+
+    MinimizedTab {
+        id: tab
+        screen: panel.screen
+        slot: 0
+        namespace: "omarchy-desktop-clock-minimized"
+        accent: panel.controller.palette.accent
+        visible: panel.minimized && !panel.remapping
+        onRestoreRequested: Qt.callLater(function() { panel.controller.setMinimized(panel.screen.name, false); })
     }
 
     // Use a stationary coordinate system for the entire gesture, avoiding
@@ -99,6 +115,20 @@ PanelWindow {
         }
         onReleased: panel.controller.savePosition()
         onCanceled: panel.controller.cancelDrag()
+    }
+
+    MouseArea {
+        id: minimize
+        objectName: "minimizeHitArea"
+        x: panel.clockWidth - 50 * panel.displayScale
+        y: 14 * panel.displayScale
+        width: 24 * panel.displayScale
+        height: 24 * panel.displayScale
+        z: 1
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton
+        cursorShape: Qt.PointingHandCursor
+        onClicked: Qt.callLater(function() { panel.controller.setMinimized(panel.screen.name, true); })
     }
 
     Component.onDestruction: if (pointer.pressed) panel.controller.cancelDrag()

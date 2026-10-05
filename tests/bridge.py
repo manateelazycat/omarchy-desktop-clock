@@ -52,7 +52,7 @@ def main():
                     return {} # The delayed service has not published IPC yet.
             try:
                 current = wait_until(lambda: (s if (s := status()).get('connected') and s.get('screens') else None))
-                assert current['version'] == '0.2.1'
+                assert current['version'] == '0.2.2'
                 assert current['positionX'] == 0.31 and current['positionY'] == 0.69
                 pid = current['workerPid']
                 environ = Path(f'/proc/{pid}/environ').read_bytes().split(b'\0')
@@ -76,6 +76,19 @@ def main():
                 wait_until(lambda: json.loads(call('bridge-test', 'info') or '{}').get('state', {}).get('palette', {}).get('accent') == '#f7768e')
                 assert json.loads(call('bridge-test', 'info'))['writes'] == 1
                 print('PASS: position and theme changes cross the bridge; one save')
+                visible = next((s for s in status()['screens'] if s['visible']), None)
+                if visible:
+                    name = visible['name']
+                    assert call('desktop-clock', 'minimize', name) == 'ok'
+                    wait_until(lambda: any(s['name'] == name and s['minimized'] and s['tabVisible']
+                                          and not s['visible'] for s in status()['screens']))
+                    assert status()['clockRunning'] and status()['workerPid'] == pid
+                    assert call('desktop-clock', 'restore', name) == 'ok'
+                    wait_until(lambda: any(s['name'] == name and s['visible'] and not s['minimized']
+                                          for s in status()['screens']))
+                    assert json.loads(call('bridge-test', 'info'))['writes'] == 3
+                    print('PASS: minimize and restore cross IPC, save once each and retain the worker')
+                assert call('desktop-clock', 'minimize', 'unknown-monitor') == 'Unknown screen.'
                 call('bridge-test', 'unload')
                 wait_until(lambda: not Path(f'/proc/{pid}').exists())
                 print('PASS: disabling service terminates its renderer')

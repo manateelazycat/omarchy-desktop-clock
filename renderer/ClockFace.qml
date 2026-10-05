@@ -7,6 +7,7 @@ Item {
     required property var palette
     property bool hovered: false
     property bool moving: false
+    property bool minimizeHovered: false
     readonly property string family: palette.fontFamily
     readonly property color ink: palette.foreground
     readonly property color accent: palette.accent
@@ -53,11 +54,16 @@ Item {
     }
     Text {
         anchors.right: parent.right
-        anchors.rightMargin: 26
+        anchors.rightMargin: 60
         y: 21
         text: "[ LOCAL TIME ]"
         color: face.dim
         font { family: face.family; pixelSize: 10; letterSpacing: 0.6 }
+    }
+    MinimizeMark {
+        x: face.width - 50; y: 14
+        accent: face.accent
+        hovered: face.minimizeHovered
     }
 
     Text {

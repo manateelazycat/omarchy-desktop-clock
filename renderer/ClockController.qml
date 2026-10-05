@@ -8,6 +8,7 @@ Item {
     property var settings: ({})
     property var palette: ({foreground: "#c0caf5", background: "#1a1b26", accent: "#7aa2f7", fontFamily: "monospace"})
     property var emptyScreens: ({})
+    readonly property var minimizedScreens: Array.isArray(settings.minimizedScreens) ? settings.minimizedScreens : []
     readonly property var eligibleScreens: Quickshell.screens.filter(function(s) { return root.emptyScreens[s.name] === true; })
     readonly property bool anyVisible: eligibleScreens.length > 0
     property point position: Qt.point(0.5, 0.52)
@@ -23,6 +24,19 @@ Item {
     readonly property bool motionRunning: motion.running
     signal saveRequested(var nextSettings)
     signal statusChanged()
+
+    function isMinimized(screenName) { return minimizedScreens.indexOf(screenName) !== -1; }
+    function setMinimized(screenName, minimized) {
+        if (!Quickshell.screens.some(function(s) { return s.name === screenName; })
+            || isMinimized(screenName) === minimized) return;
+        if (dragging) cancelDrag();
+        var names = minimizedScreens.filter(function(name) { return name !== screenName; });
+        if (minimized) names.push(screenName);
+        var next = Object.assign({}, settings, {minimizedScreens: names});
+        settings = next;
+        saveRequested(next);
+        statusChanged();
+    }
 
     function configure(config) {
         settings = config.settings || ({});
@@ -66,11 +80,14 @@ Item {
         statusChanged();
     }
     function status() {
-        return {positionX: position.x, positionY: position.y, dragging: dragging,
+        return {positionX: position.x, positionY: position.y, dragging: dragging, minimizedScreens: minimizedScreens,
             clockRunning: clockRunning, emptyScreens: emptyScreens, palette: palette,
             screens: Quickshell.screens.map(function(screen) {
                 var surface = surfaces.instances.find(function(p) { return p.screen.name === screen.name; });
-                return {name: screen.name, visible: !!surface,
+                return {name: screen.name, visible: !!surface && surface.visible,
+                    minimized: root.isMinimized(screen.name), tabVisible: !!surface && surface.minimizedWindow.visible,
+                    tabX: surface ? surface.minimizedWindow.tabX : 0,
+                    tabWidth: surface ? surface.minimizedWindow.tabWidth : 72,
                     x: surface ? surface.clockX : Position.pixel(root.position.x, screen.width, 444 * root.clockScale, 24),
                     y: surface ? surface.clockY : Position.pixel(root.position.y, screen.height, 186 * root.clockScale, 24)};
             })};

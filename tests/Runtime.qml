@@ -151,6 +151,27 @@ ShellRoot {
                 harness.check(service.position.x === 0.2, "cancel did not use latest config");
                 console.log("CLOCK_TEST_PASS: config reload preserves active gesture");
 
+                var screenName = surface.screen.name;
+                var previousPosition = Qt.point(service.position.x, service.position.y);
+                var previousWidth = surface.clockWidth;
+                var writesBeforeMinimize = harness.writes;
+                harness.check(events.mouseClick(surface.contentItem,
+                    surface.clockWidth - 38 * surface.displayScale, 26 * surface.displayScale,
+                    Qt.LeftButton, Qt.NoModifier, 1), "minimize click was not delivered");
+                result.wait(80);
+                harness.check(service.isMinimized(screenName) && !surface.displayWindow.visible
+                    && surface.minimizedWindow.backingWindowVisible, "minimize did not replace the clock with a tab");
+                harness.check(!service.dragging && service.clockRunning && harness.writes === writesBeforeMinimize + 1,
+                    "minimize started dragging, stopped timekeeping or saved more than once");
+                harness.check(service.position.x === previousPosition.x && service.position.y === previousPosition.y
+                    && surface.clockWidth === previousWidth, "minimize changed the clock geometry");
+                harness.check(service.surfaces.instances.every(function(s) {
+                    return s.screen.name === screenName || !s.minimized;
+                }), "minimize affected another monitor");
+                service.configure({settings: Object.assign({}, harness.lastSettings)});
+                harness.check(service.isMinimized(screenName), "settings reload lost minimized state");
+                console.log("CLOCK_TEST_PASS: minimize is monitor-local, keeps timekeeping and saves state without moving");
+
                 service.emptyScreens = ({});
                 result.wait(50);
                 harness.check(service.surfaces.instances.length === 0, "occupied desktops retained surfaces");
@@ -161,6 +182,17 @@ ShellRoot {
                 result.wait(50);
                 harness.check(service.surfaces.instances.length === 1 && service.clockRunning,
                     "one empty desktop did not create exactly one clock");
+                var restoredSurface = service.surfaces.instances[0];
+                harness.check(restoredSurface.minimized && restoredSurface.minimizedWindow.backingWindowVisible,
+                    "returning to an empty workspace lost the tab");
+                harness.check(events.mouseClick(restoredSurface.minimizedWindow.contentItem, 36, 7,
+                    Qt.LeftButton, Qt.NoModifier, 1), "restore click was not delivered");
+                result.wait(80);
+                harness.check(!restoredSurface.minimized && restoredSurface.displayWindow.backingWindowVisible
+                    && !restoredSurface.minimizedWindow.visible, "tab did not restore the clock");
+                harness.check(service.position.x === previousPosition.x && service.position.y === previousPosition.y,
+                    "restore changed the saved position");
+                console.log("CLOCK_TEST_PASS: workspace return retains the tab; clicking it restores the original clock");
                 console.log("CLOCK_TEST_PASS: occupied desktops have no windows or clock timer");
 
                 var grabbed = service.surfaces.instances[0];

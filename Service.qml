@@ -28,6 +28,12 @@ Item {
     function configureWorker() {
         if (peer && peer.connected) peer.write(JSON.stringify({settings: settings, palette: palette}) + "\n");
     }
+    function setMinimized(screenName, minimized) {
+        if (!Quickshell.screens.some(function(s) { return s.name === screenName; })) return "Unknown screen.";
+        if (!peer || !peer.connected) return "Desktop Clock is not connected.";
+        peer.write(JSON.stringify({type: "minimize", screen: screenName, minimized: minimized}) + "\n");
+        return "ok";
+    }
     function loadSettings(raw) {
         try {
             var entries = JSON.parse(raw).plugins || [];
@@ -113,7 +119,7 @@ Item {
         target: "desktop-clock"
         function status(): string {
             return JSON.stringify(Object.assign({}, root.workerState, {
-                version: "0.2.1", renderer: "isolated-software", workerPid: worker.processId,
+                version: "0.2.2", renderer: "isolated-software", workerPid: worker.processId,
                 connected: !!root.peer, positionX: Position.unit(root.settings.positionX, 0.5),
                 positionY: Position.unit(root.settings.positionY, 0.52),
                 accent: root.palette.accent, foreground: root.palette.foreground, background: root.palette.background
@@ -128,6 +134,8 @@ Item {
             return "ok";
         }
         function resetPosition(): string { return setPosition("0.5", "0.52"); }
+        function minimize(screen: string): string { return root.setMinimized(screen, true); }
+        function restore(screen: string): string { return root.setMinimized(screen, false); }
     }
     Component.onCompleted: worker.running = true
     Component.onDestruction: {

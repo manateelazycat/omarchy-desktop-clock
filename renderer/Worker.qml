@@ -29,7 +29,12 @@ ShellRoot {
                 parser: SplitParser {
                     onRead: data => {
                         try {
-                            clock.configure(JSON.parse(data));
+                            var packet = JSON.parse(data);
+                            if (packet.type === "minimize") {
+                                clock.setMinimized(packet.screen, packet.minimized === true);
+                                return;
+                            }
+                            clock.configure(packet);
                             root.configured = true;
                             Qt.callLater(root.sendState);
                         } catch (error) { console.warn("Desktop Clock: invalid host settings:", error); }

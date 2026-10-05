@@ -25,7 +25,7 @@ if [[ $(realpath -m -- "$plugin_source") != $(realpath -m -- "$plugin_target") ]
     install -m 644 -- "$plugin_source/$file" "$plugin_target/$file"
   done
   install -d -- "$plugin_target/renderer"
-  for file in Worker.qml DesktopState.qml ClockController.qml ClockSurface.qml ClockFace.qml Position.js; do
+  for file in Worker.qml DesktopState.qml ClockController.qml ClockSurface.qml ClockFace.qml Position.js MinimizeMark.qml MinimizedTab.qml; do
     install -m 644 -- "$plugin_source/renderer/$file" "$plugin_target/renderer/$file"
   done
   install -d -- "$plugin_target/assets"
