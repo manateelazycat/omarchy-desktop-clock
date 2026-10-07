@@ -119,7 +119,7 @@ Item {
         target: "desktop-clock"
         function status(): string {
             return JSON.stringify(Object.assign({}, root.workerState, {
-                version: "0.2.2", renderer: "isolated-software", workerPid: worker.processId,
+                version: "0.2.3", renderer: "isolated-software", workerPid: worker.processId,
                 connected: !!root.peer, positionX: Position.unit(root.settings.positionX, 0.5),
                 positionY: Position.unit(root.settings.positionY, 0.52),
                 accent: root.palette.accent, foreground: root.palette.foreground, background: root.palette.background

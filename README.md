@@ -9,6 +9,7 @@ A terminal-style desktop clock for Omarchy, with theme colors and a shared dragg
 ## Features
 
 - Appears only on each monitor's empty workspace. Opening an application window hides the clock on that monitor.
+- Windows entirely outside the screen do not block an empty workspace; partially visible windows still hide the plugin.
 - Colors and fonts follow the Omarchy theme. Displays local time in 24-hour format, with seconds, date and localized short weekday names.
 - Drag with the left mouse button to position the clock. The saved relative position is shared across all monitors and workspaces.
 - Stops without easing when the pointer stops. Releasing the mouse keeps the same visible window and saves the position once.
